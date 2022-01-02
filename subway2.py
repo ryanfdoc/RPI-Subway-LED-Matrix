@@ -14,11 +14,16 @@ orange = graphics.Color(255, 99, 25)
 black = graphics.Color(0, 0, 0)
 white = graphics.Color(255, 255, 255)
 yellow = graphics.Color(252, 204, 10)
+red = graphics.Color(255, 0, 0) # added red color for 1/2/3 lines
 
+# added OneTwoThreeFeed
 BDFMfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm'  # B,D,F,M
 ACEHfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-ace'  # A,C,E,H
+OneTwoThreefeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs' # 1,2,3,4,5,6,7
 
-feedsToCheck = [BDFMfeed, ACEHfeed]
+
+# feedsToCheck = [BDFMfeed, ACEHfeed]
+feedsToCheck = [BDFMfeed, ACEHfeed, OneTwoThreefeed] # added OneTwoThreefeed
 feedScores = dict.fromkeys(feedsToCheck, 0)
 
 
