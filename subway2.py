@@ -53,6 +53,67 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 5, 11 + offset, 13, 11 + offset, color)
         graphics.DrawLine(canvas, 7, 12 + offset, 11, 12 + offset, color)
 
+    #add draw_1 and 2 3
+    def draw_1(self, location, canvas):     
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_offset = 17
+
+        self.drawCircle(canvas, circle_offset, red)
+        
+        graphics.DrawLine(canvas, 8, 6 + text_offset, 8, 6 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 5 + text_offset, 9, 11 + text_offset, white)
+    
+    def draw_2(self, location, canvas):     
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_offset = 17
+
+        self.drawCircle(canvas, circle_offset, red)
+        
+        graphics.DrawLine(canvas, 7, 6 + text_offset, 7, 6 + text_offset, white)
+        graphics.DrawLine(canvas, 7, 11 + text_offset, 7, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 5 + text_offset, 8, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 10 + text_offset, 8, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 5 + text_offset, 9, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 9 + text_offset, 9, 9 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 11 + text_offset, 9, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 10, 5 + text_offset, 10, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 10, 8 + text_offset, 10, 8 + text_offset, white)
+        graphics.DrawLine(canvas, 10, 11 + text_offset, 10, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 7 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 11 + text_offset, 11, 11 + text_offset, white)
+    
+    def draw_3(self, location, canvas):     
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_offset = 17
+
+        self.drawCircle(canvas, circle_offset, red)
+        
+        graphics.DrawLine(canvas, 6, 6 + text_offset, 6, 6 + text_offset, white)
+        graphics.DrawLine(canvas, 6, 10 + text_offset, 6, 10 + text_offset, white)
+        graphics.DrawLine(canvas, 7, 5 + text_offset, 7, 6 + text_offset, white)
+        graphics.DrawLine(canvas, 7, 10 + text_offset, 7, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 5 + text_offset, 8, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 8 + text_offset, 8, 8 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 11 + text_offset, 8, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 5 + text_offset, 9, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 8 + text_offset, 9, 8 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 11 + text_offset, 9, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 10, 5 + text_offset, 10, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 7 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 9 + text_offset, 11, 10 + text_offset, white)
+       
     def draw_a(self, location, canvas):
         if location == 'top':
             text_offset = 0
