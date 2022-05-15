@@ -8,7 +8,7 @@ from google.transit import gtfs_realtime_pb2
 #from config import APIKey
 
 #MTA API Key
-APIKey="rNYQQScibL5Pamt5WcntX6vyw5ZctCDb4t0siwUX"
+APIKey=""
 
 # set color variables
 blue = graphics.Color(0, 57, 166)
@@ -79,8 +79,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, blue)
 
@@ -96,10 +96,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
-        blue = graphics.Color(0, 57, 166)
-        white = graphics.Color(255, 255, 255)
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, blue)
 
@@ -114,8 +112,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, blue)
 
@@ -129,8 +127,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_ofset = 17
+            text_offset = 16
+            circle_ofset = 18
             
         self.drawCircle(canvas, circle_offset, orange)
         
@@ -146,8 +144,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, orange)
 
@@ -161,8 +159,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, orange)
 
@@ -179,8 +177,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, orange)
 
@@ -193,8 +191,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, red)
 
@@ -208,8 +206,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, red)
 
@@ -226,8 +224,8 @@ class RunText(SampleBase):
             text_offset = 0
             circle_offset = 2
         else:
-            text_offset = 15
-            circle_offset = 17
+            text_offset = 16
+            circle_offset = 18
 
         self.drawCircle(canvas, circle_offset, red)
 
@@ -363,7 +361,6 @@ class RunText(SampleBase):
 
         offscreen_canvas = self.matrix.CreateFrameCanvas()
         font = graphics.Font()
-        #font.LoadFont('fonts/7x13.bdf') original font
         font.LoadFont('fonts/5x8.bdf')
         
         while True:
@@ -509,22 +506,22 @@ class RunText(SampleBase):
 
             # shift time text left so it still lines up
             if len(time_top) == 5:
-                top_offset = -7
+                top_offset = 0
             else:
                 top_offset = 0
             if len(time_bottom) == 5:
-                bottom_offset = -7
+                bottom_offset = 0
             else:
                 bottom_offset = 0
 
-            # draw descriptions
-            graphics.DrawText(offscreen_canvas, font, 20, 13, white, desc_top)
-            graphics.DrawText(offscreen_canvas, font, 20, 28, white, desc_bottom)
+            # draw descriptions for 32x64 Matrix
+            graphics.DrawText(offscreen_canvas, font, 20, 8, white, desc_top)
+            graphics.DrawText(offscreen_canvas, font, 20, 24, white, desc_bottom)
+            graphics.DrawLine(offscreen_canvas, font, 0, 16, 64, 16, white)
 
-            # draw time, adjust offset for just one led in chain from 99 to 25
-            graphics.DrawText(offscreen_canvas, font, 25 + top_offset, 13, white, time_top)
-            graphics.DrawText(offscreen_canvas, font, 25 + bottom_offset, 28, white, time_bottom)
-
+            # draw time for 32x64 Matrix
+            graphics.DrawText(offscreen_canvas, font, 20 + top_offset, 14, orangefont, time_top)
+            graphics.DrawText(offscreen_canvas, font, 20 + bottom_offset, 30, orangefont, time_bottom)
 
             time.sleep(1)
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
@@ -534,7 +531,6 @@ class RunText(SampleBase):
         
         # Add delay when subways are down for maintenance or else we spam API
         time.sleep(30)
-
 
 if __name__ == '__main__':
     while True:
