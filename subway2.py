@@ -16,19 +16,21 @@ orange = graphics.Color(255, 99, 25)
 black = graphics.Color(0, 0, 0)
 white = graphics.Color(255, 255, 255)
 yellow = graphics.Color(252, 204, 10)
-red = graphics.Color(205,0,26)
+red = graphics.Color(238,53,46)
+silver = graphics.Color(167,169,172)
+green = graphics.Color(0,147,60)
 
 # MTA Color Standards
-ACEblue = graphics.Color(0,57,166)
-BDFMorange = graphics.Color(255,99,25)
-Ggreen = graphics.Color(108,190,69)
-JZbrown = graphics.Color(153,102,51)
-Lsilver = graphics.Color(167,169,172)
-NQRyellow = graphics.Color(252,204,10)
-Sgrey = graphics.Color(128,129,131)
-OneTwoThreered = graphics.Color(238,53,46)
-FourFiveSixgreen = graphics.Color(0,147,60)
-Sevenpurple = graphics.Color(185,51,173)
+#ACEblue = graphics.Color(0,57,166)
+#BDFMorange = graphics.Color(255,99,25)
+#Ggreen = graphics.Color(108,190,69)
+#JZbrown = graphics.Color(153,102,51)
+#Lsilver = graphics.Color(167,169,172)
+#NQRyellow = graphics.Color(252,204,10)
+#Sgrey = graphics.Color(128,129,131)
+#OneTwoThreered = graphics.Color(238,53,46)
+#FourFiveSixgreen = graphics.Color(0,147,60)
+#Sevenpurple = graphics.Color(185,51,173)
 
 
 # Subway Lines
@@ -90,21 +92,6 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 10, 6 + text_offset, 10, 6 + text_offset, white)
         graphics.DrawLine(canvas, 8, 9 + text_offset, 10, 9 + text_offset, white)
 
-    def draw_d(self, location, canvas):
-        if location == 'top':
-            text_offset = 0
-            circle_offset = 2
-        else:
-            text_offset = 15
-            circle_offset = 17
-
-        self.drawCircle(canvas, circle_offset, orange)
-
-        graphics.DrawLine(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
-        graphics.DrawLine(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
-        graphics.DrawLine(canvas, 8, 11 + text_offset, 10, 11 + text_offset, white)
-        graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 10 + text_offset, white)
-
     def draw_c(self, location, canvas):
         if location == 'top':
             text_offset = 0
@@ -137,6 +124,38 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 8, 5 + text_offset, 11, 5 + text_offset, white)
         graphics.DrawLine(canvas, 8, 8 + text_offset, 10, 8 + text_offset, white)
         graphics.DrawLine(canvas, 8, 11 + text_offset, 11, 11 + text_offset, white)
+    
+    def draw_b(self, location, canvas):
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_ofset = 17
+            
+        self.drawCircle(canvas, circle_offset, orange)
+        
+        graphics.Drawline(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
+        graphics.Drawline(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
+        graphics.Drawline(canvas, 8, 8 + text_offset, 10, 8 + text_offset, white)
+        graphics.Drawline(canvas, 8, 11 + text_offset, 11, 10 + text_offset, white)
+        graphics.Drawline(canvas, 11, 6 + text_offset, 11, 7 + text_offset, white)
+        graphics.Drawline(canvas, 11, 9 + text_offset, 11, 10 + text_offset, white)
+    
+    def draw_d(self, location, canvas):
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_offset = 17
+
+        self.drawCircle(canvas, circle_offset, orange)
+
+        graphics.DrawLine(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 11 + text_offset, 10, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 10 + text_offset, white)
 
     def draw_m(self, location, canvas):
         if location == 'top':
@@ -169,7 +188,58 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 7, 5 + text_offset, 11, 5 + text_offset, white)
         graphics.DrawLine(canvas, 7, 6 + text_offset, 7, 11 + text_offset, white)
         graphics.DrawLine(canvas, 8, 8 + text_offset, 9, 8 + text_offset, white)
+        
+    def draw_one(self, location, canvas):
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_offset = 17
 
+        self.drawCircle(canvas, circle_offset, red)
+
+        graphics.DrawLine(canvas, 8, 6 + text_offset, 8, 6 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 11 + text_offset, 8, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 5 + text_offset, 9, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 10, 11 + text_offset, 10, 11 + text_offset, white)
+        
+    def draw_two(self, location, canvas):
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_offset = 17
+
+        self.drawCircle(canvas, circle_offset, red)
+
+        graphics.DrawLine(canvas, 7, 6 + text_offset, 7, 6 + text_offset, white)
+        graphics.DrawLine(canvas, 7, 11 + text_offset, 11, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 10 + text_offset, 8, 10 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 9 + text_offset, 9, 9 + text_offset, white)
+        graphics.DrawLine(canvas, 10, 8 + text_offset, 10, 8 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 7 + text_offset, white)
+    
+    def draw_three(self, location, canvas):
+        if location == 'top':
+            text_offset = 0
+            circle_offset = 2
+        else:
+            text_offset = 15
+            circle_offset = 17
+
+        self.drawCircle(canvas, circle_offset, red)
+
+        graphics.DrawLine(canvas, 7, 5 + text_offset, 11, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 7, 10 + text_offset, 7, 10 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 11 + text_offset, 10, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 9, 8 + text_offset, 10, 8 + text_offset, white)
+        graphics.DrawLine(canvas, 10, 7 + text_offset, 10, 7 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 6 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 9 + text_offset, 11, 10 + text_offset, white)
+        
     def gettimes(self, feed, s1, s2):
 
         uptownTimes = []
