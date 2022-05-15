@@ -16,11 +16,32 @@ orange = graphics.Color(255, 99, 25)
 black = graphics.Color(0, 0, 0)
 white = graphics.Color(255, 255, 255)
 yellow = graphics.Color(252, 204, 10)
+red = graphics.Color(205,0,26)
 
-# add 123 line
-#BDFMfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm'  # B,D,F,M
+# MTA Color Standards
+ACEblue = graphics.Color(0,57,166)
+BDFMorange = graphics.Color(255,99,25)
+Ggreen = graphics.Color(108,190,69)
+JZbrown = graphics.Color(153,102,51)
+Lsilver = graphics.Color(167,169,172)
+NQRyellow = graphics.Color(252,204,10)
+Sgrey = graphics.Color(128,129,131)
+OneTwoThreered = graphics.Color(238,53,46)
+FourFiveSixgreen = graphics.Color(0,147,60)
+Sevenpurple = graphics.Color(185,51,173)
+
+
+# Subway Lines
+BDFMfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm'  # B,D,F,M
 ACEHfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-ace'  # A,C,E,H
+OneTwoThreefeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs'  # 1,2,3,4,5,6,7
+Gfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-g'  # G
+NQRWfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-nqrw'  # N,Q,R,W
+JZfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-jz'  # J,Z
+Lfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-l' # L
+SIRfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-si' # SIR (Staten Island Railway)
 
+#Add your feeds here
 #feedsToCheck = [BDFMfeed, ACEHfeed]
 feedsToCheck = [ACEHfeed]
 feedScores = dict.fromkeys(feedsToCheck, 0)
@@ -273,8 +294,9 @@ class RunText(SampleBase):
 
         offscreen_canvas = self.matrix.CreateFrameCanvas()
         font = graphics.Font()
-        font.LoadFont('fonts/7x13.bdf')
-
+        #font.LoadFont('fonts/7x13.bdf') original font
+        font.LoadFont('fonts/5x8.bdf')
+        
         while True:
             if loop == 0:
                 desc_top = ""
@@ -351,13 +373,35 @@ class RunText(SampleBase):
                 self.draw_c('top', offscreen_canvas)
             elif top_line == 'E':
                 self.draw_e('top', offscreen_canvas)
-            elif top_line == 'F':
-                self.draw_f('top', offscreen_canvas)
+            elif top_line == 'B':
+                self.draw_b('top', offscreen_canvas)
             elif top_line == 'D':
                 self.draw_d('top', offscreen_canvas)
-            elif top_line == 'B':
+            elif top_line == 'F':
+                self.draw_f('top', offscreen_canvas)
+            elif top_line == 'M':
                 self.draw_m('top', offscreen_canvas)
-
+            elif top_line == 'one':
+                self.draw_one('top', offscreen_canvas)
+            elif top_line == 'two':
+                self.draw_two('top', offscreen_canvas)
+            elif top_line == 'three':
+                self.draw_three('top', offscreen_canvas)              
+            elif top_line == 'four':
+                self.draw_four('top', offscreen_canvas)
+            elif top_line == 'five':
+                self.draw_five('top', offscreen_canvas)
+            elif top_line == 'six':
+                self.draw_six('top', offscreen_canvas)
+            elif top_line == 'seven':
+                self.draw_seven('top', offscreen_canvas)
+            elif top_line == 'G':
+                self.draw_g('top', offscreen_canvas)
+            elif top_line == 'J':
+                self.draw_j('top', offscreen_canvas)
+            elif top_line == 'Z':
+                self.draw_z('top', offscreen_canvas)
+        
             # bottom image print
             if bottom_line == 'A':
                 self.draw_a('bottom', offscreen_canvas)
@@ -365,12 +409,34 @@ class RunText(SampleBase):
                 self.draw_c('bottom', offscreen_canvas)
             elif bottom_line == 'E':
                 self.draw_e('bottom', offscreen_canvas)
-            elif bottom_line == 'F':
-                self.draw_f('bottom', offscreen_canvas)
+            elif bottom_line == 'B':
+                self.draw_b('bottom', offscreen_canvas)
             elif bottom_line == 'D':
                 self.draw_d('bottom', offscreen_canvas)
-            elif bottom_line == 'B':
+            elif bottom_line == 'F':
+                self.draw_f('bottom', offscreen_canvas)
+            elif bottom_line == 'M':
                 self.draw_m('bottom', offscreen_canvas)
+            elif bottom_line == 'one':
+                self.draw_one('bottom', offscreen_canvas)
+            elif bottom_line == 'two':
+                self.draw_two('bottom', offscreen_canvas)
+            elif bottom_line == 'three':
+                self.draw_three('bottom', offscreen_canvas)              
+            elif bottom_line == 'four':
+                self.draw_four('bottom', offscreen_canvas)
+            elif bottom_line == 'five':
+                self.draw_five('bottom', offscreen_canvas)
+            elif bottom_line == 'six':
+                self.draw_six('bottom', offscreen_canvas)
+            elif bottom_line == 'seven':
+                self.draw_seven('bottom', offscreen_canvas)
+            elif bottom_line == 'G':
+                self.draw_g('bottom', offscreen_canvas)
+            elif bottom_line == 'J':
+                self.draw_j('bottom', offscreen_canvas)
+            elif bottom_line == 'Z':
+                self.draw_z('bottom', offscreen_canvas)
 
             # shift time text left so it still lines up
             if len(time_top) == 5:
