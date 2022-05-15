@@ -44,8 +44,7 @@ Lfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-l' #
 SIRfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-si' # SIR (Staten Island Railway)
 
 #Add your feeds here
-#feedsToCheck = [BDFMfeed, ACEHfeed]
-feedsToCheck = [ACEHfeed]
+feedsToCheck = [BDFMfeed, ACEHfeed]
 feedScores = dict.fromkeys(feedsToCheck, 0)
 
 
@@ -369,12 +368,12 @@ class RunText(SampleBase):
         
         while True:
             if loop == 0:
-                desc_top = ""
-                desc_bottom = ""
+                desc_top = "Uptown"
+                desc_bottom = "Downtown"
                 loop += 1
             else:
-                desc_top = ""
-                desc_bottom = ""
+                desc_top = "Bronx"
+                desc_bottom = "Brooklyn"
                 loop = 0
 
             offscreen_canvas.Clear()
@@ -389,17 +388,17 @@ class RunText(SampleBase):
                     loop += 1
                     print('Fail Loop Count: ' + loop)
                     if loop == 10:
-                        top_line = 'F'
+                        top_line = 'B'
                         top_line_time = 99
-                        bottom_line = 'F'
+                        bottom_line = 'B'
                         bottom_line_time = 99
 
                         break
             else:
                 if train_times == 'fail':
-                    top_line = 'F'
+                    top_line = 'B'
                     top_line_time = 99
-                    bottom_line = 'F'
+                    bottom_line = 'B'
                     bottom_line_time = 99
                 else:
                     top_line = train_times[0][0]
