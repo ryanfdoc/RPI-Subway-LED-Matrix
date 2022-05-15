@@ -376,12 +376,12 @@ class RunText(SampleBase):
             offscreen_canvas.Clear()
 
 
-            # grab DFM train times  and first uptown and downtown line
-            train_times = self.getTrainTimes("A19N", "A19S")
+            # grab 123 train times and first uptown and downtown line
+            train_times = self.getTrainTimes("120N", "120S")
             if train_times == 'fail':
                 loop = 0
                 while train_times == 'fail':
-                    train_times = self.getTrainTimes("A19N", "A19S")
+                    train_times = self.getTrainTimes("120N", "120S")
                     loop += 1
                     print('Fail Loop Count: ' + loop)
                     if loop == 10:
@@ -447,19 +447,19 @@ class RunText(SampleBase):
                 self.draw_f('top', offscreen_canvas)
             elif top_line == 'M':
                 self.draw_m('top', offscreen_canvas)
-            elif top_line == 'one':
+            elif top_line == '1':
                 self.draw_one('top', offscreen_canvas)
-            elif top_line == 'two':
+            elif top_line == '2':
                 self.draw_two('top', offscreen_canvas)
-            elif top_line == 'three':
+            elif top_line == '3':
                 self.draw_three('top', offscreen_canvas)              
-            elif top_line == 'four':
+            elif top_line == '4':
                 self.draw_four('top', offscreen_canvas)
-            elif top_line == 'five':
+            elif top_line == '5':
                 self.draw_five('top', offscreen_canvas)
-            elif top_line == 'six':
+            elif top_line == '6':
                 self.draw_six('top', offscreen_canvas)
-            elif top_line == 'seven':
+            elif top_line == '7':
                 self.draw_seven('top', offscreen_canvas)
             elif top_line == 'G':
                 self.draw_g('top', offscreen_canvas)
@@ -483,19 +483,19 @@ class RunText(SampleBase):
                 self.draw_f('bottom', offscreen_canvas)
             elif bottom_line == 'M':
                 self.draw_m('bottom', offscreen_canvas)
-            elif bottom_line == 'one':
+            elif bottom_line == '1':
                 self.draw_one('bottom', offscreen_canvas)
-            elif bottom_line == 'two':
+            elif bottom_line == '2':
                 self.draw_two('bottom', offscreen_canvas)
-            elif bottom_line == 'three':
+            elif bottom_line == '3':
                 self.draw_three('bottom', offscreen_canvas)              
-            elif bottom_line == 'four':
+            elif bottom_line == '4':
                 self.draw_four('bottom', offscreen_canvas)
-            elif bottom_line == 'five':
+            elif bottom_line == '5':
                 self.draw_five('bottom', offscreen_canvas)
-            elif bottom_line == 'six':
+            elif bottom_line == '6':
                 self.draw_six('bottom', offscreen_canvas)
-            elif bottom_line == 'seven':
+            elif bottom_line == '7':
                 self.draw_seven('bottom', offscreen_canvas)
             elif bottom_line == 'G':
                 self.draw_g('bottom', offscreen_canvas)
@@ -539,8 +539,3 @@ if __name__ == '__main__':
             run_text.print_help()
 
         time.sleep(5)
-
-
-
-        
-
