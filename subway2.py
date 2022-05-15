@@ -44,7 +44,7 @@ Lfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-l' #
 SIRfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-si' # SIR (Staten Island Railway)
 
 #Add your feeds here
-feedsToCheck = [BDFMfeed, ACEHfeed]
+feedsToCheck = [OneTwoThreefeed, ACEHfeed]
 feedScores = dict.fromkeys(feedsToCheck, 0)
 
 
