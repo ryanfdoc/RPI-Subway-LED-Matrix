@@ -20,6 +20,9 @@ red = graphics.Color(238,53,46)
 silver = graphics.Color(167,169,172)
 green = graphics.Color(0,147,60)
 
+# set font colors
+whitefont = graphics.Color(255, 255, 255)
+orangefont = graphics.Color(
 # MTA Color Standards
 #ACEblue = graphics.Color(0,57,166)
 #BDFMorange = graphics.Color(255,99,25)
@@ -393,9 +396,9 @@ class RunText(SampleBase):
                         break
             else:
                 if train_times == 'fail':
-                    top_line = 'B'
+                    top_line = 'X'
                     top_line_time = 99
-                    bottom_line = 'B'
+                    bottom_line = 'X'
                     bottom_line_time = 99
                 else:
                     top_line = train_times[0][0]
@@ -406,9 +409,9 @@ class RunText(SampleBase):
             # grab the ACE trains and first uptown and downtown line
             train_times2 = self.getTrainTimes("A19N", "A19S")
             if train_times2 == 'fail':
-                top_line2 = 'C'
+                top_line2 = 'X'
                 top_line_time2 = 99
-                bottom_line2 = 'C'
+                bottom_line2 = 'X'
                 bottom_line_time2 = 99
             else:
                 top_line2 = train_times2[0][0]
