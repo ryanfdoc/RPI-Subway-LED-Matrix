@@ -17,9 +17,9 @@ orange = graphics.Color(255, 99, 25)
 black = graphics.Color(0, 0, 0)
 white = graphics.Color(255, 255, 255)
 yellow = graphics.Color(252, 204, 10)
-red = graphics.Color(238,53,46)
-silver = graphics.Color(167,169,172)
-green = graphics.Color(0,147,60)
+red = graphics.Color(238, 53, 46)
+silver = graphics.Color(128, 129, 131)
+green = graphics.Color(0, 147, 60)
 
 # set font colors
 whitefont = graphics.Color(255, 255, 255)
@@ -28,14 +28,14 @@ orangefont = graphics.Color(245, 189, 31)
 # MTA Color Standards
 ACEblue = graphics.Color(0,57,166)
 BDFMorange = graphics.Color(255,99,25)
-#Ggreen = graphics.Color(108,190,69)
-#JZbrown = graphics.Color(153,102,51)
-#Lsilver = graphics.Color(167,169,172)
-#NQRyellow = graphics.Color(252,204,10)
-#Sgrey = graphics.Color(128,129,131)
-#OneTwoThreered = graphics.Color(238,53,46)
-#FourFiveSixgreen = graphics.Color(0,147,60)
-#Sevenpurple = graphics.Color(185,51,173)
+Ggreen = graphics.Color(108,190,69)
+JZbrown = graphics.Color(153,102,51)
+Lsilver = graphics.Color(167,169,172)
+NQRyellow = graphics.Color(252,204,10)
+Sgrey = graphics.Color(128,129,131)
+OneTwoThreered = graphics.Color(238,53,46)
+FourFiveSixgreen = graphics.Color(0,147,60)
+Sevenpurple = graphics.Color(185,51,173)
 
 # Subway Lines
 BDFMfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm'  # B,D,F,M
@@ -85,7 +85,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, blue)
+        self.drawCircle(canvas, circle_offset, ACEblue)
 
         graphics.DrawLine(canvas, 7, 7 + text_offset, 7, 11 + text_offset, white)
         graphics.DrawLine(canvas, 11, 7 + text_offset, 11, 11 + text_offset, white)
@@ -102,7 +102,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, blue)
+        self.drawCircle(canvas, circle_offset, ACEblue)
 
         graphics.DrawLine(canvas, 7, 6 + text_offset, 7, 10 + text_offset, white)
         graphics.DrawLine(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
@@ -118,7 +118,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, blue)
+        self.drawCircle(canvas, circle_offset, ACEblue)
 
         graphics.DrawLine(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
         graphics.DrawLine(canvas, 8, 5 + text_offset, 11, 5 + text_offset, white)
@@ -133,7 +133,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, orange)
+        self.drawCircle(canvas, circle_offset, BDFMorange)
 
         graphics.DrawLine(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
         graphics.DrawLine(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
@@ -150,7 +150,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, orange)
+        self.drawCircle(canvas, circle_offset, BDFMorange)
 
         graphics.DrawLine(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
         graphics.DrawLine(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
@@ -165,7 +165,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, orange)
+        self.drawCircle(canvas, circle_offset, BDFMorange)
 
         graphics.DrawLine(canvas, 6, 5 + text_offset, 6, 11 + text_offset, white)
         graphics.DrawLine(canvas, 12, 5 + text_offset, 12, 11 + text_offset, white)
@@ -183,7 +183,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, orange)
+        self.drawCircle(canvas, circle_offset, BDFMorange)
 
         graphics.DrawLine(canvas, 7, 5 + text_offset, 11, 5 + text_offset, white)
         graphics.DrawLine(canvas, 7, 6 + text_offset, 7, 11 + text_offset, white)
@@ -197,7 +197,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, red)
+        self.drawCircle(canvas, circle_offset, OneTwoThreered)
 
         graphics.DrawLine(canvas, 8, 6 + text_offset, 8, 6 + text_offset, white)
         graphics.DrawLine(canvas, 8, 11 + text_offset, 8, 11 + text_offset, white)
@@ -212,7 +212,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, red)
+        self.drawCircle(canvas, circle_offset, OneTwoThreered)
 
         graphics.DrawLine(canvas, 7, 6 + text_offset, 7, 6 + text_offset, white)
         graphics.DrawLine(canvas, 7, 11 + text_offset, 11, 11 + text_offset, white)
@@ -230,7 +230,7 @@ class RunText(SampleBase):
             text_offset = 16
             circle_offset = 18
 
-        self.drawCircle(canvas, circle_offset, red)
+        self.drawCircle(canvas, circle_offset, OneTwoThreered)
 
         graphics.DrawLine(canvas, 7, 5 + text_offset, 11, 5 + text_offset, white)
         graphics.DrawLine(canvas, 7, 10 + text_offset, 7, 10 + text_offset, white)
@@ -379,7 +379,7 @@ class RunText(SampleBase):
             offscreen_canvas.Clear()
 
 
-            # grab BDFM train times  and first uptown and downtown line
+            # grab BDFM train times and first uptown and downtown line
             train_times = self.getTrainTimes("A19N", "A19S")
             if train_times == 'fail':
                 loop = 0
@@ -388,17 +388,17 @@ class RunText(SampleBase):
                     loop += 1
                     print('Fail Loop Count: ', loop)
                     if loop == 10:
-                        top_line = 'D'
+                        top_line = 'X'
                         top_line_time = 99
-                        bottom_line = 'D'
+                        bottom_line = 'X'
                         bottom_line_time = 99
 
                         break
             else:
                 if train_times == 'fail':
-                    top_line = 'B'
+                    top_line = 'X'
                     top_line_time = 99
-                    bottom_line = 'B'
+                    bottom_line = 'X'
                     bottom_line_time = 99
                 else:
                     top_line = train_times[0][0]
@@ -409,9 +409,9 @@ class RunText(SampleBase):
   # grab the ACE trains and first uptown and downtown line
             train_times2 = self.getTrainTimes("A19N", "A19S")
             if train_times2 == 'fail':
-                top_line2 = 'C'
+                top_line2 = 'X'
                 top_line_time2 = 99
-                bottom_line2 = 'C'
+                bottom_line2 = 'X'
                 bottom_line_time2 = 99
             else:
                 top_line2 = train_times2[0][0]
@@ -419,7 +419,7 @@ class RunText(SampleBase):
                 bottom_line2 = train_times2[2][0]
                 bottom_line_time2 = train_times2[3][0]
 
-            # if AE line will show up before  DFM
+            # if AE line will show up before DFM
 
             if top_line_time2 < top_line_time:
                 top_line_time = top_line_time2
