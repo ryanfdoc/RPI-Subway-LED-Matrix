@@ -1,3 +1,4 @@
+                                
 import time
 from datetime import datetime
 from samplebase import SampleBase
@@ -5,10 +6,10 @@ from rgbmatrix import graphics
 import requests
 from protobuf_to_dict import protobuf_to_dict
 from google.transit import gtfs_realtime_pb2
-#from config import APIKey
 
+#from config import APIKey
 #MTA API Key
-APIKey=""
+APIKey="99wxNKL3OU9Edhw43T84zcSb0s1jsPq327iy1Dre"
 
 # set color variables
 blue = graphics.Color(0, 57, 166)
@@ -22,10 +23,11 @@ green = graphics.Color(0,147,60)
 
 # set font colors
 whitefont = graphics.Color(255, 255, 255)
-orangefont = graphics.Color(
+orangefont = graphics.Color(245, 189, 31)
+
 # MTA Color Standards
-#ACEblue = graphics.Color(0,57,166)
-#BDFMorange = graphics.Color(255,99,25)
+ACEblue = graphics.Color(0,57,166)
+BDFMorange = graphics.Color(255,99,25)
 #Ggreen = graphics.Color(108,190,69)
 #JZbrown = graphics.Color(153,102,51)
 #Lsilver = graphics.Color(167,169,172)
@@ -34,7 +36,6 @@ orangefont = graphics.Color(
 #OneTwoThreered = graphics.Color(238,53,46)
 #FourFiveSixgreen = graphics.Color(0,147,60)
 #Sevenpurple = graphics.Color(185,51,173)
-
 
 # Subway Lines
 BDFMfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-bdfm'  # B,D,F,M
@@ -47,9 +48,8 @@ Lfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-l' #
 SIRfeed = 'https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-si' # SIR (Staten Island Railway)
 
 #Add your feeds here
-feedsToCheck = [OneTwoThreefeed, ACEHfeed]
+feedsToCheck = [BDFMfeed, ACEHfeed]
 feedScores = dict.fromkeys(feedsToCheck, 0)
-
 
 class RunText(SampleBase):
 
@@ -124,24 +124,24 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 8, 5 + text_offset, 11, 5 + text_offset, white)
         graphics.DrawLine(canvas, 8, 8 + text_offset, 10, 8 + text_offset, white)
         graphics.DrawLine(canvas, 8, 11 + text_offset, 11, 11 + text_offset, white)
-    
+
     def draw_b(self, location, canvas):
         if location == 'top':
             text_offset = 0
             circle_offset = 2
         else:
             text_offset = 16
-            circle_ofset = 18
-            
+            circle_offset = 18
+
         self.drawCircle(canvas, circle_offset, orange)
-        
-        graphics.Drawline(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
-        graphics.Drawline(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
-        graphics.Drawline(canvas, 8, 8 + text_offset, 10, 8 + text_offset, white)
-        graphics.Drawline(canvas, 8, 11 + text_offset, 11, 10 + text_offset, white)
-        graphics.Drawline(canvas, 11, 6 + text_offset, 11, 7 + text_offset, white)
-        graphics.Drawline(canvas, 11, 9 + text_offset, 11, 10 + text_offset, white)
-    
+
+        graphics.DrawLine(canvas, 7, 5 + text_offset, 7, 11 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 5 + text_offset, 10, 5 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 8 + text_offset, 10, 8 + text_offset, white)
+        graphics.DrawLine(canvas, 8, 11 + text_offset, 11, 10 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 7 + text_offset, white)
+        graphics.DrawLine(canvas, 11, 9 + text_offset, 11, 10 + text_offset, white)
+
     def draw_d(self, location, canvas):
         if location == 'top':
             text_offset = 0
@@ -188,7 +188,7 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 7, 5 + text_offset, 11, 5 + text_offset, white)
         graphics.DrawLine(canvas, 7, 6 + text_offset, 7, 11 + text_offset, white)
         graphics.DrawLine(canvas, 8, 8 + text_offset, 9, 8 + text_offset, white)
-        
+
     def draw_one(self, location, canvas):
         if location == 'top':
             text_offset = 0
@@ -203,7 +203,7 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 8, 11 + text_offset, 8, 11 + text_offset, white)
         graphics.DrawLine(canvas, 9, 5 + text_offset, 9, 11 + text_offset, white)
         graphics.DrawLine(canvas, 10, 11 + text_offset, 10, 11 + text_offset, white)
-        
+
     def draw_two(self, location, canvas):
         if location == 'top':
             text_offset = 0
@@ -221,7 +221,7 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 9, 9 + text_offset, 9, 9 + text_offset, white)
         graphics.DrawLine(canvas, 10, 8 + text_offset, 10, 8 + text_offset, white)
         graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 7 + text_offset, white)
-    
+
     def draw_three(self, location, canvas):
         if location == 'top':
             text_offset = 0
@@ -239,8 +239,8 @@ class RunText(SampleBase):
         graphics.DrawLine(canvas, 10, 7 + text_offset, 10, 7 + text_offset, white)
         graphics.DrawLine(canvas, 11, 6 + text_offset, 11, 6 + text_offset, white)
         graphics.DrawLine(canvas, 11, 9 + text_offset, 11, 10 + text_offset, white)
-        
-    def gettimes(self, feed, s1, s2):
+
+ def gettimes(self, feed, s1, s2):
 
         uptownTimes = []
         downtownTimes = []
@@ -280,7 +280,7 @@ class RunText(SampleBase):
                             # Get the number of seconds from now to the arrival time
                             elapsed = update['arrival']['time'] - time.mktime(datetime.now().timetuple())
 
-                            # If we alredy missed it, skip it
+                            # If we already missed it, skip it
                             if (elapsed < 0):
                                 continue
 
@@ -289,7 +289,6 @@ class RunText(SampleBase):
                             # Calculate minutes and seconds until arrival
                             mins = int(elapsed / 60)
                             secs = int(elapsed % 60)
-
 
                             # Round to nearest minute
                             if (secs > 30):
@@ -359,13 +358,14 @@ class RunText(SampleBase):
 
         return (uptownTrainIDs, uptownTimes, downtownTrainIDs, downtownTimes)
 
-    def run(self):
+ def run(self):
         loop = 0
 
         offscreen_canvas = self.matrix.CreateFrameCanvas()
         font = graphics.Font()
-        font.LoadFont('fonts/5x8.bdf')
-        
+        #font.LoadFont('fonts/7x13.bdf') original font
+        font.LoadFont('fonts/4x6.bdf')
+
         while True:
             if loop == 0:
                 desc_top = "Uptown"
@@ -379,26 +379,26 @@ class RunText(SampleBase):
             offscreen_canvas.Clear()
 
 
-            # grab 123 train times and first uptown and downtown line
-            train_times = self.getTrainTimes("120N", "120S")
+            # grab BDFM train times  and first uptown and downtown line
+            train_times = self.getTrainTimes("A19N", "A19S")
             if train_times == 'fail':
                 loop = 0
                 while train_times == 'fail':
-                    train_times = self.getTrainTimes("120N", "120S")
+                    train_times = self.getTrainTimes("A19N", "A19S")
                     loop += 1
-                    print('Fail Loop Count: ' + loop)
+                    print('Fail Loop Count: ', loop)
                     if loop == 10:
-                        top_line = 'B'
+                        top_line = 'D'
                         top_line_time = 99
-                        bottom_line = 'B'
+                        bottom_line = 'D'
                         bottom_line_time = 99
 
                         break
             else:
                 if train_times == 'fail':
-                    top_line = 'X'
+                    top_line = 'B'
                     top_line_time = 99
-                    bottom_line = 'X'
+                    bottom_line = 'B'
                     bottom_line_time = 99
                 else:
                     top_line = train_times[0][0]
@@ -406,12 +406,12 @@ class RunText(SampleBase):
                     bottom_line = train_times[2][0]
                     bottom_line_time = train_times[3][0]
 
-            # grab the ACE trains and first uptown and downtown line
+  # grab the ACE trains and first uptown and downtown line
             train_times2 = self.getTrainTimes("A19N", "A19S")
             if train_times2 == 'fail':
-                top_line2 = 'X'
+                top_line2 = 'C'
                 top_line_time2 = 99
-                bottom_line2 = 'X'
+                bottom_line2 = 'C'
                 bottom_line_time2 = 99
             else:
                 top_line2 = train_times2[0][0]
@@ -455,7 +455,7 @@ class RunText(SampleBase):
             elif top_line == '2':
                 self.draw_two('top', offscreen_canvas)
             elif top_line == '3':
-                self.draw_three('top', offscreen_canvas)              
+                self.draw_three('top', offscreen_canvas)
             elif top_line == '4':
                 self.draw_four('top', offscreen_canvas)
             elif top_line == '5':
@@ -470,7 +470,7 @@ class RunText(SampleBase):
                 self.draw_j('top', offscreen_canvas)
             elif top_line == 'Z':
                 self.draw_z('top', offscreen_canvas)
-        
+
             # bottom image print
             if bottom_line == 'A':
                 self.draw_a('bottom', offscreen_canvas)
@@ -491,7 +491,7 @@ class RunText(SampleBase):
             elif bottom_line == '2':
                 self.draw_two('bottom', offscreen_canvas)
             elif bottom_line == '3':
-                self.draw_three('bottom', offscreen_canvas)              
+                self.draw_three('bottom', offscreen_canvas)
             elif bottom_line == '4':
                 self.draw_four('bottom', offscreen_canvas)
             elif bottom_line == '5':
@@ -517,23 +517,25 @@ class RunText(SampleBase):
             else:
                 bottom_offset = 0
 
-            # draw descriptions for 32x64 Matrix
+            # draw descriptions
             graphics.DrawText(offscreen_canvas, font, 20, 8, white, desc_top)
             graphics.DrawText(offscreen_canvas, font, 20, 24, white, desc_bottom)
-            graphics.DrawLine(offscreen_canvas, font, 0, 16, 64, 16, white)
+            graphics.DrawLine(offscreen_canvas, 0, 16, 64, 16, white)
 
-            # draw time for 32x64 Matrix
+            # draw time, adjust offset for just one led in chain from 99 to 25
             graphics.DrawText(offscreen_canvas, font, 20 + top_offset, 14, orangefont, time_top)
             graphics.DrawText(offscreen_canvas, font, 20 + bottom_offset, 30, orangefont, time_bottom)
+
 
             time.sleep(1)
             offscreen_canvas = self.matrix.SwapOnVSync(offscreen_canvas)
 
             # sleep for 30 seconds before running again
             time.sleep(30)
-        
+
         # Add delay when subways are down for maintenance or else we spam API
         time.sleep(30)
+
 
 if __name__ == '__main__':
     while True:
